@@ -104,7 +104,10 @@ class Album extends Component {
 
   formatTime(timeInSeconds) {
     const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = Math.round(timeInSeconds - minutes * 60);
+    let seconds = Math.round(timeInSeconds - minutes * 60);
+    if( seconds < 10){
+      seconds = "0" + seconds;
+    }
 
     console.log(minutes);
     console.log(seconds);
